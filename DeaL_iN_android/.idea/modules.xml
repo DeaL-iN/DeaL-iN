@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DeaL_iN_android.iml" filepath="$PROJECT_DIR$/.idea/modules/DeaL_iN_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DeaL_iN_android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DeaL_iN_android.app.iml" />
+    </modules>
+  </component>
+</project>

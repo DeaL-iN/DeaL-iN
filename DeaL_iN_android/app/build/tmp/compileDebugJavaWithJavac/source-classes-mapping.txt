@@ -1,0 +1,2 @@
+com/example/deal_in_android/BuildConfig.java
+ com.example.deal_in_android.BuildConfig
