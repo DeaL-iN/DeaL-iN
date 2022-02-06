@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C26E6C727AFB5190037C511 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C26E6C627AFB5190037C511 /* ChatListViewController.swift */; };
+		5C26E6CA27AFB58D0037C511 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C26E6C927AFB58D0037C511 /* MyPageViewController.swift */; };
 		5C93E41D27AFB1EB00C8570A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93E41C27AFB1EB00C8570A /* DetailViewController.swift */; };
 		5C93E42027AFB22B00C8570A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93E41F27AFB22B00C8570A /* SearchViewController.swift */; };
 		5C93E42327AFB25F00C8570A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93E42227AFB25F00C8570A /* PostViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C26E6C627AFB5190037C511 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		5C26E6C927AFB58D0037C511 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		5C93E41C27AFB1EB00C8570A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5C93E41F27AFB22B00C8570A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5C93E42227AFB25F00C8570A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				5C93E41C27AFB1EB00C8570A /* DetailViewController.swift */,
 				5C93E41F27AFB22B00C8570A /* SearchViewController.swift */,
 				5C93E42227AFB25F00C8570A /* PostViewController.swift */,
+				5C26E6C627AFB5190037C511 /* ChatListViewController.swift */,
+				5C26E6C927AFB58D0037C511 /* MyPageViewController.swift */,
 			);
 			path = "DeaL-iN";
 			sourceTree = "<group>";
@@ -150,8 +156,10 @@
 				5C93E42027AFB22B00C8570A /* SearchViewController.swift in Sources */,
 				5CB6F2ED27AFAF67004E5153 /* MainViewController.swift in Sources */,
 				5CB6F2E927AFAF67004E5153 /* AppDelegate.swift in Sources */,
+				5C26E6C727AFB5190037C511 /* ChatListViewController.swift in Sources */,
 				5CB6F2EB27AFAF67004E5153 /* SceneDelegate.swift in Sources */,
 				5C93E41D27AFB1EB00C8570A /* DetailViewController.swift in Sources */,
+				5C26E6CA27AFB58D0037C511 /* MyPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

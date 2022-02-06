@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bGq-PK-QO3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,20 +8,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--홈-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="DeaL_iN" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ox7-8U-1g5">
+                                <rect key="frame" x="143" y="371" width="129" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="홈" selectedImage="homekit" catalog="system" id="WPZ-eM-1Fb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-251" y="21"/>
+            <point key="canvasLocation" x="656.52173913043487" y="20.758928571428569"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="avD-QQ-0JJ">
@@ -36,40 +46,136 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2N-cq-x8S" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="559" y="21"/>
+            <point key="canvasLocation" x="1468.1159420289857" y="20.758928571428569"/>
         </scene>
-        <!--Search View Controller-->
+        <!--검색-->
         <scene sceneID="j79-bR-IRi">
             <objects>
                 <viewController id="Uq3-zQ-G2M" customClass="SearchViewController" customModule="DeaL_iN" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q4l-RL-Haw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHn-r4-13N">
+                                <rect key="frame" x="133" y="334" width="149" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Pte-0W-uHu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="검색" selectedImage="magnifyingglass" catalog="system" id="yRC-Y4-Lf5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ke0-3K-5YY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-252" y="736"/>
+            <point key="canvasLocation" x="-1270" y="736"/>
         </scene>
-        <!--Post View Controller-->
+        <!--업로드-->
         <scene sceneID="y9y-JF-7g5">
             <objects>
                 <viewController id="TXW-hG-RQT" customClass="PostViewController" customModule="DeaL_iN" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RGR-IK-Xts">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVC-gc-GhN">
+                                <rect key="frame" x="160" y="397" width="94" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="z2Z-ra-gE7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="업로드" selectedImage="plus.app" catalog="system" id="hZz-ZJ-DK3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NO4-5f-ZzW" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519" y="736"/>
+            <point key="canvasLocation" x="-462" y="736"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="R2I-Pe-sLg">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bGq-PK-QO3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GkA-nl-4Rd">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="VkV-ue-c1j"/>
+                        <segue destination="Uq3-zQ-G2M" kind="relationship" relationship="viewControllers" id="YNP-Iq-dfM"/>
+                        <segue destination="TXW-hG-RQT" kind="relationship" relationship="viewControllers" id="zsY-wE-Loh"/>
+                        <segue destination="Sxg-ds-WXY" kind="relationship" relationship="viewControllers" id="cKg-5v-0EO"/>
+                        <segue destination="SaM-Qg-hWw" kind="relationship" relationship="viewControllers" id="cNk-2X-g6T"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C18-zJ-q5u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-252.17391304347828" y="20.758928571428569"/>
+        </scene>
+        <!--채팅-->
+        <scene sceneID="lwp-f2-R5g">
+            <objects>
+                <viewController id="Sxg-ds-WXY" customClass="ChatListViewController" customModule="DeaL_iN" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DC9-Yi-7ve">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPr-2O-AuC">
+                                <rect key="frame" x="160" y="387" width="103" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dEg-R3-rco"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="채팅" selectedImage="captions.bubble" catalog="system" id="abE-uq-Lw6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1qh-3B-Iui" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="736"/>
+        </scene>
+        <!--마이페이지-->
+        <scene sceneID="t4n-1I-dfU">
+            <objects>
+                <viewController id="SaM-Qg-hWw" customClass="MyPageViewController" customModule="DeaL_iN" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fpt-rp-JR6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MyPage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90Y-QR-1PB">
+                                <rect key="frame" x="121" y="377" width="173" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TNp-uQ-RRe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="마이페이지" selectedImage="person.fill" catalog="system" id="x5g-6p-oaL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2P8-gK-buZ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1144.9275362318842" y="735.9375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="captions.bubble" catalog="system" width="128" height="110"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
