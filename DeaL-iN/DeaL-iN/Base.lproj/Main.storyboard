@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--홈-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="DeaL_iN" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="012-nN-FK4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UAd-62-R9e">
                                     <size key="itemSize" width="128" height="128"/>
@@ -47,14 +47,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="012-nN-FK4" secondAttribute="trailing" id="ti5-Bp-xHc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" selectedImage="homekit" catalog="system" id="WPZ-eM-1Fb"/>
+                    <navigationItem key="navigationItem" id="uCa-nc-ri0"/>
                     <connections>
                         <outlet property="merchandiseListCollectionView" destination="012-nN-FK4" id="ZOa-l1-cD1"/>
+                        <outlet property="navigationBar" destination="uCa-nc-ri0" id="5nM-MV-a4q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="656.52173913043487" y="20.758928571428569"/>
+            <point key="canvasLocation" x="1566.6666666666667" y="20.758928571428569"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="avD-QQ-0JJ">
@@ -69,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2N-cq-x8S" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468.1159420289857" y="20.758928571428569"/>
+            <point key="canvasLocation" x="2378.2608695652175" y="20.758928571428569"/>
         </scene>
         <!--검색-->
         <scene sceneID="j79-bR-IRi">
@@ -132,7 +133,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="VkV-ue-c1j"/>
+                        <segue destination="35i-Cn-op5" kind="relationship" relationship="viewControllers" id="VkV-ue-c1j"/>
                         <segue destination="Uq3-zQ-G2M" kind="relationship" relationship="viewControllers" id="YNP-Iq-dfM"/>
                         <segue destination="TXW-hG-RQT" kind="relationship" relationship="viewControllers" id="zsY-wE-Loh"/>
                         <segue destination="Sxg-ds-WXY" kind="relationship" relationship="viewControllers" id="cKg-5v-0EO"/>
@@ -192,6 +193,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2P8-gK-buZ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144.9275362318842" y="735.9375"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="6FO-zs-7aE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="35i-Cn-op5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" selectedImage="homekit" catalog="system" id="WPZ-eM-1Fb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U0s-NA-kVu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fuD-w2-tt9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJg-l8-wG3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656.52173913043487" y="20.758928571428569"/>
         </scene>
     </scenes>
     <resources>

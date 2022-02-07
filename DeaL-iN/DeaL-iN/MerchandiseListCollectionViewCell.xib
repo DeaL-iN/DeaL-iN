@@ -9,16 +9,47 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MerchandiseListCollectionViewCell" customModule="DeaL_iN" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MerchandiseListCollectionViewCell" id="gTV-IL-0wX" customClass="MerchandiseListCollectionViewCell" customModule="DeaL_iN" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="219" height="184"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                <rect key="frame" x="0.0" y="0.0" width="219" height="184"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="OKE-vi-EKV">
+                        <rect key="frame" x="0.0" y="0.0" width="219" height="184"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OK-cz-uT0">
+                        <rect key="frame" x="10" y="129.5" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xzf-WZ-uuf">
+                        <rect key="frame" x="10" y="157" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="155" height="155"/>
-            <point key="canvasLocation" x="78.985507246376812" y="173.77232142857142"/>
+            <viewLayoutGuide key="safeArea" id="mxI-hl-jUR"/>
+            <constraints>
+                <constraint firstItem="Xzf-WZ-uuf" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="1.8" id="B61-BW-PHo"/>
+                <constraint firstItem="Xzf-WZ-uuf" firstAttribute="leading" secondItem="mxI-hl-jUR" secondAttribute="leading" constant="10" id="F2W-GZ-RTG"/>
+                <constraint firstItem="3OK-cz-uT0" firstAttribute="leading" secondItem="mxI-hl-jUR" secondAttribute="leading" constant="10" id="FZU-07-Fbt"/>
+                <constraint firstItem="Xzf-WZ-uuf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="0.2" priority="750" id="Sli-SU-31q"/>
+                <constraint firstItem="3OK-cz-uT0" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="0.2" priority="750" id="Vjq-J0-CEk"/>
+                <constraint firstItem="3OK-cz-uT0" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="1.5" id="mNB-1y-Yir"/>
+            </constraints>
+            <size key="customSize" width="219" height="184"/>
+            <connections>
+                <outlet property="merchandiseNameLabel" destination="3OK-cz-uT0" id="Lve-md-7on"/>
+                <outlet property="priceLabel" destination="Xzf-WZ-uuf" id="pmH-pf-E5B"/>
+                <outlet property="thumbnailImageView" destination="OKE-vi-EKV" id="NCl-s9-Qui"/>
+            </connections>
+            <point key="canvasLocation" x="89.130434782608702" y="243.75"/>
         </collectionViewCell>
     </objects>
 </document>
