@@ -1,3 +1,9 @@
 <resources>
+    <string name="hello_blank_fragment">Hello</string>
     <string name="app_name">DeaL_iN_android</string>
+    <string name="home_menu_name">홈</string>
+    <string name="search_menu_name">검색</string>
+    <string name="post_menu_name">상품등록</string>
+    <string name="chat_menu_name">채팅</string>
+    <string name="mypage_menu_name">마이페이지</string>
 </resources>

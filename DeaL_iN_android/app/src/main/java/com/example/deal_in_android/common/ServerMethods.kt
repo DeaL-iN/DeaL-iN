@@ -1,4 +1,4 @@
-package com.example.dealin.common
+package com.example.deal_in_android.common
 
 
 import com.example.deal_in_android.common.entity.Items
