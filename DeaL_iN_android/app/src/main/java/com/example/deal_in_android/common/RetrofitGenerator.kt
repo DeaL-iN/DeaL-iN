@@ -1,8 +1,6 @@
 package com.example.deal_in_android.common
 
-import com.example.dealin.common.ServerMethods
 import com.google.gson.GsonBuilder
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
