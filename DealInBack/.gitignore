@@ -1,9 +1,11 @@
+FAILURE
 HELP.md
 .gradle
 .vscode
 
 bin
 build
+gradle/wrapper
 
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
