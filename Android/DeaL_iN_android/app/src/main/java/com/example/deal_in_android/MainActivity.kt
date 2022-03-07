@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.deal_in_android.R
 import com.example.deal_in_android.chat.ChatListFragment
 import com.example.deal_in_android.mypage.MyPageFragment
+import com.example.deal_in_android.mypage.users.LoginFragment
 import com.example.deal_in_android.post.PostFragment
 import com.example.deal_in_android.product.ProductListFragment
 import com.example.deal_in_android.search.SearchFragment
@@ -22,12 +23,15 @@ class MainActivity : AppCompatActivity() {
     private val postFragment = PostFragment()
     private val chatListFragment = ChatListFragment()
     private val myPageFragment = MyPageFragment()
+    private val loginFragment = LoginFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        changeFragment(productListFragment)
         setBottomNavigation()
+
+        // 기본 화면 = 상품 목록
+        changeFragment(productListFragment)
     }
 
     private fun setBottomNavigation(){
@@ -46,7 +50,12 @@ class MainActivity : AppCompatActivity() {
                     changeFragment(chatListFragment)
                 }
                 R.id.mypage -> {
-                    changeFragment(myPageFragment)
+                    // 로그인이 안돼있으면 로그인페이지로
+                    if(true){
+                        changeFragment(loginFragment)
+                    }else{
+                        changeFragment(myPageFragment)
+                    }
                 }
             }
             true
@@ -54,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun changeFragment(fragment: Fragment){
+    public fun changeFragment(fragment: Fragment){
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.main_container, fragment)
