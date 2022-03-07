@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="@string/home_menu_name"
+
+        />
+    <item
+        android:id="@+id/search"
+        app:showAsAction="ifRoom"
+        android:title="@string/search_menu_name"
+        />
+    <item
+        android:id="@+id/post"
+        app:showAsAction="ifRoom"
+        android:title="@string/post_menu_name"
+
+        />
+    <item
+        android:id="@+id/chat"
+        app:showAsAction="ifRoom"
+        android:title="@string/chat_menu_name"
+
+        />
+    <item
+        android:id="@+id/mypage"
+        app:showAsAction="ifRoom"
+        android:title="@string/mypage_menu_name"
+
+        />
+</menu>
