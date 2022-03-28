@@ -19,6 +19,7 @@
 		5C57BCE727F1946F00A8FC93 /* Chat_room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57BCE627F1946F00A8FC93 /* Chat_room.swift */; };
 		5C57BCEA27F194D600A8FC93 /* Chat_member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57BCE927F194D600A8FC93 /* Chat_member.swift */; };
 		5C57BCED27F195B900A8FC93 /* Chat_chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57BCEC27F195B900A8FC93 /* Chat_chats.swift */; };
+		5C57BCF127F196AD00A8FC93 /* Item_photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57BCF027F196AD00A8FC93 /* Item_photos.swift */; };
 		5C5D737927B0F1FC004FE448 /* MerchandiseListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D737727B0F1FC004FE448 /* MerchandiseListCollectionViewCell.swift */; };
 		5C5D737A27B0F1FC004FE448 /* MerchandiseListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D737827B0F1FC004FE448 /* MerchandiseListCollectionViewCell.xib */; };
 		5C93E41D27AFB1EB00C8570A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93E41C27AFB1EB00C8570A /* DetailViewController.swift */; };
@@ -47,6 +48,7 @@
 		5C57BCE627F1946F00A8FC93 /* Chat_room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_room.swift; sourceTree = "<group>"; };
 		5C57BCE927F194D600A8FC93 /* Chat_member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_member.swift; sourceTree = "<group>"; };
 		5C57BCEC27F195B900A8FC93 /* Chat_chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_chats.swift; sourceTree = "<group>"; };
+		5C57BCF027F196AD00A8FC93 /* Item_photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_photos.swift; sourceTree = "<group>"; };
 		5C5D737727B0F1FC004FE448 /* MerchandiseListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchandiseListCollectionViewCell.swift; sourceTree = "<group>"; };
 		5C5D737827B0F1FC004FE448 /* MerchandiseListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchandiseListCollectionViewCell.xib; sourceTree = "<group>"; };
 		5C93E41C27AFB1EB00C8570A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				5C57BCE627F1946F00A8FC93 /* Chat_room.swift */,
 				5C57BCE927F194D600A8FC93 /* Chat_member.swift */,
 				5C57BCEC27F195B900A8FC93 /* Chat_chats.swift */,
+				5C57BCF027F196AD00A8FC93 /* Item_photos.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				5C57BCD827F1922800A8FC93 /* Delivery_status.swift in Sources */,
 				5C26E6C727AFB5190037C511 /* ChatListViewController.swift in Sources */,
 				5C57BCDB27F1928600A8FC93 /* Users.swift in Sources */,
+				5C57BCF127F196AD00A8FC93 /* Item_photos.swift in Sources */,
 				5CB6F2EB27AFAF67004E5153 /* SceneDelegate.swift in Sources */,
 				5C57BCDE27F1934100A8FC93 /* User_items.swift in Sources */,
 				5C93E41D27AFB1EB00C8570A /* DetailViewController.swift in Sources */,
