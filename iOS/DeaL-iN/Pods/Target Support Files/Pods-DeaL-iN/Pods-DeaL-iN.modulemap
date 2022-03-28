@@ -1,0 +1,6 @@
+framework module Pods_DeaL_iN {
+  umbrella header "Pods-DeaL-iN-umbrella.h"
+
+  export *
+  module * { export * }
+}
