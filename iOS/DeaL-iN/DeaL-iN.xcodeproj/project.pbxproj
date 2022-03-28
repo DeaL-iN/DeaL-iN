@@ -17,6 +17,7 @@
 		5C57BCE127F193B900A8FC93 /* User_wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57BCE027F193B900A8FC93 /* User_wish.swift */; };
 		5C57BCE427F193FC00A8FC93 /* Notices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57BCE327F193FC00A8FC93 /* Notices.swift */; };
 		5C57BCE727F1946F00A8FC93 /* Chat_room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57BCE627F1946F00A8FC93 /* Chat_room.swift */; };
+		5C57BCEA27F194D600A8FC93 /* Chat_member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57BCE927F194D600A8FC93 /* Chat_member.swift */; };
 		5C5D737927B0F1FC004FE448 /* MerchandiseListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D737727B0F1FC004FE448 /* MerchandiseListCollectionViewCell.swift */; };
 		5C5D737A27B0F1FC004FE448 /* MerchandiseListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5D737827B0F1FC004FE448 /* MerchandiseListCollectionViewCell.xib */; };
 		5C93E41D27AFB1EB00C8570A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93E41C27AFB1EB00C8570A /* DetailViewController.swift */; };
@@ -43,6 +44,7 @@
 		5C57BCE027F193B900A8FC93 /* User_wish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User_wish.swift; sourceTree = "<group>"; };
 		5C57BCE327F193FC00A8FC93 /* Notices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notices.swift; sourceTree = "<group>"; };
 		5C57BCE627F1946F00A8FC93 /* Chat_room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_room.swift; sourceTree = "<group>"; };
+		5C57BCE927F194D600A8FC93 /* Chat_member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_member.swift; sourceTree = "<group>"; };
 		5C5D737727B0F1FC004FE448 /* MerchandiseListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchandiseListCollectionViewCell.swift; sourceTree = "<group>"; };
 		5C5D737827B0F1FC004FE448 /* MerchandiseListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MerchandiseListCollectionViewCell.xib; sourceTree = "<group>"; };
 		5C93E41C27AFB1EB00C8570A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				5C57BCE027F193B900A8FC93 /* User_wish.swift */,
 				5C57BCE327F193FC00A8FC93 /* Notices.swift */,
 				5C57BCE627F1946F00A8FC93 /* Chat_room.swift */,
+				5C57BCE927F194D600A8FC93 /* Chat_member.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C93E42327AFB25F00C8570A /* PostViewController.swift in Sources */,
+				5C57BCEA27F194D600A8FC93 /* Chat_member.swift in Sources */,
 				5C93E42027AFB22B00C8570A /* SearchViewController.swift in Sources */,
 				5C013E4627D5DA8200CC6A00 /* NetworkManager.swift in Sources */,
 				5CB6F2ED27AFAF67004E5153 /* MainViewController.swift in Sources */,
