@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct Categories: Hashable {
+    var id: Int
+    var name: String
+}
+
 struct Users: Hashable {
     var id: Int
     var email: String
