@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--  [haena]  20220329 fix text size -->
+    <dimen name="title_size">33sp</dimen>
+    <dimen name="subtitle_size">27sp</dimen>
+    <dimen name="large_size">23sp</dimen>
+    <dimen name="medium_size">19sp</dimen>
+    <dimen name="small_size">17sp</dimen>
+    <dimen name="smaller_size">15sp</dimen>
+</resources>

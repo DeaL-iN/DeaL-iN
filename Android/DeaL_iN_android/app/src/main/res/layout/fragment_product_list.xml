@@ -5,10 +5,36 @@
     android:layout_height="match_parent"
     tools:context=".product.ProductListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:id="@+id/list_scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MAIN" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:text="@string/title"
+                style="@style/titleStyle" />
+            <TextView
+                android:text="@string/title"
+                style="@style/subtitleStyle" />
+            <TextView
+                android:text="@string/title"
+                style="@style/largeStyle" />
+            <TextView
+                android:text="@string/title"
+                style="@style/mediumStyle" />
+            <TextView
+                android:text="@string/title"
+                style="@style/smallStyle" />
+            <TextView
+                android:text="@string/title"
+                style="@style/smallerStyle" />
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

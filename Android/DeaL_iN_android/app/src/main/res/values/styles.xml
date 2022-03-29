@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="titleStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/dosis_medium</item>
+        <item name="android:textSize">@dimen/title_size</item>
+    </style>
+
+    <style name="subtitleStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/dosis_regular</item>
+        <item name="android:textSize">@dimen/subtitle_size</item>
+    </style>
+
+    <style name="largeStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/dosis_regular</item>
+        <item name="android:textSize">@dimen/large_size</item>
+    </style>
+
+    <style name="mediumStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/dosis_regular</item>
+        <item name="android:textSize">@dimen/medium_size</item>
+    </style>
+
+    <style name="smallStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/dosis_regular</item>
+        <item name="android:textSize">@dimen/small_size</item>
+    </style>
+
+    <style name="smallerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/dosis_regular</item>
+        <item name="android:textSize">@dimen/smaller_size</item>
+    </style>
+
+</resources>

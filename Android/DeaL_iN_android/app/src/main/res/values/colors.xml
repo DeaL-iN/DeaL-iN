@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+<!--  color 추가 20220328  -->
+    <color name = "purple_point">#FF6667AB</color>
+    <color name = "purple_component">#666667AB</color>
+    <color name = "black_light">#B3000000</color>
+    <color name = "gray_border">#FFC4C4C4</color>
+    <color name = "red_start">#F2FF2663</color>
+    <color name = "red_end">#D9FF4D00</color>
 </resources>

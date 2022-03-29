@@ -6,4 +6,6 @@
     <string name="post_menu_name">상품등록</string>
     <string name="chat_menu_name">채팅</string>
     <string name="mypage_menu_name">마이페이지</string>
+<!-- [haena] 20220329 add text  -->
+    <string name="title">DealIn</string>
 </resources>
