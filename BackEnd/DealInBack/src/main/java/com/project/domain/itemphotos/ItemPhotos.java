@@ -2,6 +2,7 @@ package com.project.domain.itemphotos;
 
 import com.project.domain.items.Items;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -24,6 +25,12 @@ public class ItemPhotos {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private Items items;
+
+    @Builder
+    public ItemPhotos(Items items, String photoUrl) {
+        this.items = items;
+        this.photoUrl = photoUrl;
+    }
 
 
 }
