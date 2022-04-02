@@ -3,9 +3,11 @@ package com.project.controller;
 import com.project.domain.items.ItemDetailResDto;
 import com.project.domain.items.ItemResDto;
 import com.project.domain.items.ItemSaveReqDto;
+import com.project.domain.useritems.UserItemsReqDto;
 import com.project.domain.users.Users;
 import com.project.domain.userswish.UsersWishReqDto;
 import com.project.service.ItemService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +29,7 @@ public class ItemController {
         if (authentication == null || !authentication.isAuthenticated()) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
-        Integer userId = ((Users)authentication.getPrincipal()).getId();
+        Integer userId = ((Users) authentication.getPrincipal()).getId();
         itemService.createItem(userId, itemSaveReqDto);
 
         return ResponseEntity.status(HttpStatus.OK).build();
@@ -38,7 +40,7 @@ public class ItemController {
         if (authentication == null || !authentication.isAuthenticated()) {
             return ResponseEntity.status(HttpStatus.OK).body(itemService.getItems(null, itemsId));
         }
-        return ResponseEntity.status(HttpStatus.OK).body(itemService.getItems((Users)authentication.getPrincipal(), itemsId));
+        return ResponseEntity.status(HttpStatus.OK).body(itemService.getItems((Users) authentication.getPrincipal(), itemsId));
     }
 
 //    @GetMapping("/{itemsId}")
@@ -54,8 +56,42 @@ public class ItemController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
-        Users user = ((Users)authentication.getPrincipal());
+        Users user = ((Users) authentication.getPrincipal());
         itemService.setWishItem(user, usersWishReqDto);
+
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @GetMapping("/{itemsId}/bid")
+    public ResponseEntity<Boolean> isBidItem(@ApiIgnore Authentication authentication, @PathVariable Integer itemsId) throws Exception {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        Users user = ((Users) authentication.getPrincipal());
+        return ResponseEntity.status(HttpStatus.OK).body(itemService.isBidItem(user, itemsId));
+    }
+
+    @PostMapping("/bid")
+    public ResponseEntity bidItem(@ApiIgnore Authentication authentication, UserItemsReqDto userItemsReqDto) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        Users user = ((Users) authentication.getPrincipal());
+        itemService.bidItem(1, user, userItemsReqDto);
+
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @PutMapping("/bid")
+    public ResponseEntity rebidItem(@ApiIgnore Authentication authentication, UserItemsReqDto userItemsReqDto) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        Users user = ((Users) authentication.getPrincipal());
+        itemService.bidItem(2, user, userItemsReqDto);
 
         return ResponseEntity.status(HttpStatus.OK).build();
     }
