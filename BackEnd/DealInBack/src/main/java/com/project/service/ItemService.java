@@ -46,9 +46,19 @@ public class ItemService {
         itemPhotos.forEach(itemPhotosRepository::save);
     }
 
-    public List<ItemResDto> getItems(Users user, int page) {
+    public List<ItemResDto> searchItems(Users user, int page, String keyword, Integer categoryId) {
         List<ItemResDto> itemResDtos = new ArrayList<>();
-        Page<Items> itemsList = itemsRepository.findAll(PageRequest.of(page, 10));
+        Page<Items> itemsList;
+        if (keyword == null && categoryId == null) {
+            itemsList = itemsRepository.findAll(PageRequest.of(page, 10));
+        } else if (keyword != null && categoryId == null) {
+            itemsList = itemsRepository.findByNameContaining(keyword);
+        } else if (keyword == null && categoryId != null) {
+            itemsList = itemsRepository.findByCategoriesId(categoryId);
+        } else {
+            itemsList = itemsRepository.findByNameContainingAndCategoriesId(keyword, categoryId);
+        }
+
         for (Items item : itemsList) {
             String photoUrl = itemPhotosRepository.findFirstByItemsId(item.getId()).getPhotoUrl();
             itemResDtos.add(new ItemResDto(item, photoUrl, false));

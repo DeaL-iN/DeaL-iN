@@ -37,13 +37,13 @@ public class ItemController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping("/all/{itemsId}")
-    public ResponseEntity<List<ItemResDto>> getItems(@ApiIgnore Authentication authentication, @PathVariable Integer itemsId) {
+    @GetMapping("/search/{itemsId}")
+    public ResponseEntity<List<ItemResDto>> searchItems(@ApiIgnore Authentication authentication, @PathVariable Integer itemsId, @RequestParam String keyword, @RequestParam Integer categoryId) {
         if (authentication == null || !authentication.isAuthenticated()) {
-            return ResponseEntity.status(HttpStatus.OK).body(itemService.getItems(null, itemsId));
+            return ResponseEntity.status(HttpStatus.OK).body(itemService.searchItems(null, itemsId, keyword, categoryId));
         }
-        
-        return ResponseEntity.status(HttpStatus.OK).body(itemService.getItems((Users) authentication.getPrincipal(), itemsId));
+
+        return ResponseEntity.status(HttpStatus.OK).body(itemService.searchItems((Users) authentication.getPrincipal(), itemsId, keyword, categoryId));
     }
 
     @GetMapping("/{itemsId}")
