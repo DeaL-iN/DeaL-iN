@@ -7,6 +7,7 @@ import com.project.domain.useritems.UserItems;
 import com.project.domain.users.Users;
 import com.project.domain.userswish.UsersWish;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -65,4 +66,21 @@ public class Items extends BaseTimeEntity {
     @OneToMany(mappedBy = "items", cascade = CascadeType.ALL)
     private List<UsersWish> usersWishList = new ArrayList<>();
 
+    public void setClosedStatus(Boolean isClosed) {
+        this.isClosed = isClosed;
+    }
+
+    @Builder
+    public Items(Integer id, @NotNull String name, @NotNull Integer startPrice, @NotNull Integer sellPrice, @NotNull DeliveryStatus deliveryStatus, @NotNull LocalDateTime deadlineDate, @NotNull String contents, Boolean isClosed, Categories categories, Users users) {
+        this.id = id;
+        this.name = name;
+        this.startPrice = startPrice;
+        this.sellPrice = sellPrice;
+        this.deliveryStatus = deliveryStatus;
+        this.deadlineDate = deadlineDate;
+        this.contents = contents;
+        this.isClosed = isClosed;
+        this.categories = categories;
+        this.users = users;
+    }
 }
