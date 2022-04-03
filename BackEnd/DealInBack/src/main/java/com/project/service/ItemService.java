@@ -8,7 +8,9 @@ import com.project.domain.items.*;
 import com.project.domain.useritems.UserItems;
 import com.project.domain.useritems.UserItemsRepository;
 import com.project.domain.useritems.UserItemsReqDto;
+import com.project.domain.useritems.UserItemsUpdateReqDto;
 import com.project.domain.users.Users;
+import com.project.domain.users.UsersBidsResDto;
 import com.project.domain.users.UsersRepository;
 import com.project.domain.userswish.UsersWishRepository;
 import com.project.domain.userswish.UsersWishReqDto;
@@ -87,7 +89,7 @@ public class ItemService {
 
     public void bidItem(int flag, Users user, UserItemsReqDto userItemsReqDto) {
         Items item = itemsRepository.findById(userItemsReqDto.getItemId()).orElseThrow(() -> new IllegalArgumentException("상품 정보가 존재하지 않습니다."));
-        
+
         // 첫 입찰이면
         if (flag == 1)
             userItemsRepository.save(userItemsReqDto.toEntity(item, user));
@@ -103,6 +105,36 @@ public class ItemService {
         usersRepository.save(user);
     }
 
+    public void buyItem(Users user, UserItemsUpdateReqDto userItemsUpdateReqDto) throws Exception {
+        Items item = itemsRepository.findById(userItemsUpdateReqDto.getItemId()).orElseThrow(() -> new IllegalArgumentException("상품 정보가 존재하지 않습니다."));
+
+        UserItems userItems = userItemsRepository.findByUsersIdAndItemsIdAndPrice(user.getId(), item.getId(), userItemsUpdateReqDto.getPrice());
+        userItems.setUserItemsStatus(true);
+        userItemsRepository.save(userItems);
+
+        if (user.getPoint() < userItemsUpdateReqDto.getPrice()) {
+            throw new Exception("포인트가 부족합니다.");
+        }
+
+        // 포인트 차감
+        user.setPoint(user.getPoint() - userItemsUpdateReqDto.getPrice());
+        usersRepository.save(user);
+
+        // 상품 마감 확정
+        item.setClosedStatus(true);
+        itemsRepository.save(item);
+    }
+
+    public void cancelBuyingItem(Users user, Integer itemId) {
+        UserItems userItems = userItemsRepository.findLastByUsersIdAndItemsIdAndIsPurchase(user.getId(), itemId, false);
+        usersRepository.deleteById(userItems.getId());
+    }
+
+    public UsersBidsResDto getNextBiddingUser(Users user, Integer itemsId) {
+        UserItems userItems = userItemsRepository.findLastByItemsIdAndIsPurchase(itemsId, false).orElseThrow(() -> new IllegalArgumentException("다음 입찰자 정보가 없습니다."));
+
+        return new UsersBidsResDto(userItems.getUsers().getId(), userItems.getUsers().getNickname());
+    }
 
 
     public List<ItemPhotos> photosToItemPhotos(List<String> photos, Items item) {
@@ -117,6 +149,7 @@ public class ItemService {
 
         return itemPhotos;
     }
+
 
 
 }

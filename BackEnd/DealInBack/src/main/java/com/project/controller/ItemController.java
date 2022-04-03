@@ -4,7 +4,9 @@ import com.project.domain.items.ItemDetailResDto;
 import com.project.domain.items.ItemResDto;
 import com.project.domain.items.ItemSaveReqDto;
 import com.project.domain.useritems.UserItemsReqDto;
+import com.project.domain.useritems.UserItemsUpdateReqDto;
 import com.project.domain.users.Users;
+import com.project.domain.users.UsersBidsResDto;
 import com.project.domain.userswish.UsersWishReqDto;
 import com.project.service.ItemService;
 import io.swagger.annotations.Api;
@@ -32,7 +34,7 @@ public class ItemController {
         Integer userId = ((Users) authentication.getPrincipal()).getId();
         itemService.createItem(userId, itemSaveReqDto);
 
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/all/{itemsId}")
@@ -59,7 +61,7 @@ public class ItemController {
         Users user = ((Users) authentication.getPrincipal());
         itemService.setWishItem(user, usersWishReqDto);
 
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/{itemsId}/bid")
@@ -81,7 +83,7 @@ public class ItemController {
         Users user = ((Users) authentication.getPrincipal());
         itemService.bidItem(1, user, userItemsReqDto);
 
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PutMapping("/bid")
@@ -95,4 +97,39 @@ public class ItemController {
 
         return ResponseEntity.status(HttpStatus.OK).build();
     }
+
+    @PutMapping("/buy")
+    public ResponseEntity purchaseItem(@ApiIgnore Authentication authentication, UserItemsUpdateReqDto userItemsUpdateReqDto) throws Exception {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        Users user = ((Users) authentication.getPrincipal());
+        itemService.buyItem(user, userItemsUpdateReqDto);
+
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @DeleteMapping("/{itemsId}")
+    public ResponseEntity cancelBuyingItem(@ApiIgnore Authentication authentication, @PathVariable Integer itemsId) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        Users user = ((Users) authentication.getPrincipal());
+        itemService.cancelBuyingItem(user, itemsId);
+
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @GetMapping("/{itemsId}/bids")
+    public ResponseEntity<UsersBidsResDto> getNextBiddingUser(@ApiIgnore Authentication authentication, @PathVariable Integer itemsId) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        Users user = ((Users) authentication.getPrincipal());
+        return ResponseEntity.status(HttpStatus.OK).body(itemService.getNextBiddingUser(user, itemsId));
+    }
+
 }

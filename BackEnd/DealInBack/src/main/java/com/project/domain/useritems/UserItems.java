@@ -40,6 +40,10 @@ public class UserItems {
         this.dealDate = dealDate;
     }
 
+    public void setUserItemsStatus(Boolean isPurchase) {
+        this.isPurchase = isPurchase;
+    }
+
     @Builder
     public UserItems(Items items, Users users, Integer price, LocalDateTime dealDate, Boolean isPurchase) {
         this.items = items;

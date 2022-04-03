@@ -66,6 +66,10 @@ public class Items extends BaseTimeEntity {
     @OneToMany(mappedBy = "items", cascade = CascadeType.ALL)
     private List<UsersWish> usersWishList = new ArrayList<>();
 
+    public void setClosedStatus(Boolean isClosed) {
+        this.isClosed = isClosed;
+    }
+
     @Builder
     public Items(Integer id, @NotNull String name, @NotNull Integer startPrice, @NotNull Integer sellPrice, @NotNull DeliveryStatus deliveryStatus, @NotNull LocalDateTime deadlineDate, @NotNull String contents, Boolean isClosed, Categories categories, Users users) {
         this.id = id;
