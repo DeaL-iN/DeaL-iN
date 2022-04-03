@@ -9,4 +9,5 @@ public interface UserItemsRepository extends JpaRepository<UserItems, Integer> {
     UserItems findLastByUsersIdAndItemsIdAndIsPurchase(Integer userId, Integer itemId, Boolean isPurchase);
     UserItems findByUsersIdAndItemsIdAndPrice(Integer userId, Integer itemId, Integer price);
     Optional<UserItems> findLastByItemsIdAndIsPurchase(Integer itemId, Boolean isPurchase);
+    Long countByItemsIdAndIsPurchase(Integer itemId, Boolean isPurchase);
 }

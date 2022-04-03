@@ -65,9 +65,37 @@ public class ItemService {
         return itemResDtos;
     }
 
-//    public ItemDetailResDto getDetailItems(Users user, int itemsId) {
-//
-//    }
+    public ItemDetailResDto getDetailItems(Users user, Integer itemId) {
+        Items item = itemsRepository.findById(itemId).orElseThrow(() -> new IllegalArgumentException("상품 정보가 존재하지 않습니다."));
+        List<String> photoUrls = new ArrayList<>();
+        Boolean wish = false;
+
+        // 현재 상품 입찰 수 정보
+        long cnt = userItemsRepository.countByItemsIdAndIsPurchase(itemId, false);
+        Integer joinCnt = (int) cnt;
+
+        // 상품 이미지 정보
+        List<ItemPhotos> itemphotos = itemPhotosRepository.findAllByItemsId(itemId);
+        for (ItemPhotos itemPhoto : itemphotos) {
+            photoUrls.add(itemPhoto.getPhotoUrl());
+        }
+
+        // 상품 찜 여부 확인
+        if (user != null) {
+            if (usersWishRepository.existsByUsersIdAndItemsId(user.getId(), itemId))
+                wish = true;
+        }
+
+        return new ItemDetailResDto(item.getUsers().getProfileImageUrl(),
+                    item.getUsers().getNickname(),
+                    item.getUsers().getGrade(),
+                    item.getStartPrice(),
+                    item.getSellPrice(),
+                    joinCnt,
+                    item.getDeadlineDate(),
+                    wish,
+                    photoUrls);
+    }
 
     public void setWishItem(Users user, UsersWishReqDto usersWishReqDto) {
         Items item = itemsRepository.findById(usersWishReqDto.getItemId()).orElseThrow(() -> new IllegalArgumentException("상품 정보가 존재하지 않습니다."));

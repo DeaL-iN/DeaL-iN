@@ -42,15 +42,18 @@ public class ItemController {
         if (authentication == null || !authentication.isAuthenticated()) {
             return ResponseEntity.status(HttpStatus.OK).body(itemService.getItems(null, itemsId));
         }
+        
         return ResponseEntity.status(HttpStatus.OK).body(itemService.getItems((Users) authentication.getPrincipal(), itemsId));
     }
 
-//    @GetMapping("/{itemsId}")
-//    public ResponseEntity<ItemDetailResDto> getDetailItem(@ApiIgnore Authentication authentication, @PathVariable Integer itemsId) {
-//        if (authentication == null || !authentication.isAuthenticated()) {
-//            return ResponseEntity.status(HttpStatus.OK).body(itemService.getDetailItems(null, itemsId));
-//        }
-//    }
+    @GetMapping("/{itemsId}")
+    public ResponseEntity<ItemDetailResDto> getDetailItem(@ApiIgnore Authentication authentication, @PathVariable Integer itemsId) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.OK).body(itemService.getDetailItems(null, itemsId));
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body(itemService.getDetailItems((Users) authentication.getPrincipal(), itemsId));
+    }
 
     @PostMapping("/wish")
     public ResponseEntity setWishItem(@ApiIgnore Authentication authentication, @RequestBody UsersWishReqDto usersWishReqDto) {
