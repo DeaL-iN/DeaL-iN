@@ -48,15 +48,16 @@ public class ItemService {
 
     public List<ItemResDto> searchItems(Users user, int page, String keyword, Integer categoryId) {
         List<ItemResDto> itemResDtos = new ArrayList<>();
+        PageRequest pageRequest = PageRequest.of(categoryId, 10);
         Page<Items> itemsList;
         if (keyword == null && categoryId == null) {
-            itemsList = itemsRepository.findAll(PageRequest.of(page, 10));
+            itemsList = itemsRepository.findAll(pageRequest);
         } else if (keyword != null && categoryId == null) {
-            itemsList = itemsRepository.findByNameContaining(keyword);
+            itemsList = itemsRepository.findByNameContaining(keyword, pageRequest);
         } else if (keyword == null && categoryId != null) {
-            itemsList = itemsRepository.findByCategoriesId(categoryId);
+            itemsList = itemsRepository.findByCategoriesId(categoryId, pageRequest);
         } else {
-            itemsList = itemsRepository.findByNameContainingAndCategoriesId(keyword, categoryId);
+            itemsList = itemsRepository.findByNameContainingAndCategoriesId(keyword, categoryId, pageRequest);
         }
 
         for (Items item : itemsList) {
