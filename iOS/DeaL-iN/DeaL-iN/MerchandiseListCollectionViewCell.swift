@@ -23,6 +23,7 @@ class MerchandiseListCollectionViewCell: UICollectionViewCell {
         merchandiseNameLabel?.text = merchandiseName
         priceLabel?.text = price
         thumbnailImageView.backgroundColor = UIColor(red: 100, green: 100, blue: 100, alpha: 1)
+        thumbnailImageView.image = image
     }
 
 }

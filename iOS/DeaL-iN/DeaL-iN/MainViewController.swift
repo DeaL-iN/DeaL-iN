@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    let dummy = ["상품1", "상품2", "상품3"]
+    let dummy = ["상품1", "상품2", "상품3", "상품4"]
 
     @IBOutlet weak var merchandiseListCollectionView: UICollectionView!
     @IBOutlet weak var navigationBar: UINavigationItem!
@@ -33,11 +33,21 @@ extension MainViewController: UICollectionViewDataSource {
         return dummy.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+            header.largeContentTitle = "Hot List"
+            return header
+        } else {
+            return UICollectionReusableView()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MerchandiseListCollectionViewCell.identifier, for: indexPath) as? MerchandiseListCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.configure(image: UIImage(), merchandiseName: dummy[indexPath.row], price: "1,000,000")
+        cell.configure(image: UIImage(named: String(indexPath.row))!, merchandiseName: dummy[indexPath.row], price: String(indexPath.row * 1000000))
         return cell
         
     }
