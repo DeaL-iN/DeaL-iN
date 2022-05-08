@@ -9,14 +9,17 @@ import com.project.domain.users.Users;
 import com.project.domain.users.UsersBidsResDto;
 import com.project.domain.userswish.UsersWishReqDto;
 import com.project.service.ItemService;
+import com.project.util.S3Uploader;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import springfox.documentation.annotations.ApiIgnore;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -24,7 +27,21 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ItemController {
 
+    private final S3Uploader s3Uploader;
     private final ItemService itemService;
+
+    // 이미지 업로드
+    @PostMapping("/image")
+    public List<String> uploadImage(List<MultipartFile> multipartFiles) throws IOException {
+        return s3Uploader.upload(multipartFiles);
+    }
+
+    // 이미지 삭제
+    @PostMapping("/image/delete")
+    public ResponseEntity deleteImage(@RequestParam String fileUrl) {
+        s3Uploader.delete(fileUrl);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 
     @PostMapping("")
     public ResponseEntity createItem(@ApiIgnore Authentication authentication, @RequestBody ItemSaveReqDto itemSaveReqDto) {
