@@ -25,3 +25,5 @@ out/
 .DS_Store
 .AppleDouble
 .LSOverride
+
+aws.yml

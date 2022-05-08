@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -34,30 +35,32 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
       protected void configure(HttpSecurity http) throws Exception {
-        http
-            .authorizeRequests()
-            // .antMatchers(
-            //     "/",
-            //     "/v2/api-docs", "/swagger-resources/**", "/swagger-ui.html", "/webjars/**", "/swagger/**"   // swagger
-            // ).permitAll()
+        http.
+                httpBasic().disable()
+                .csrf().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and().authorizeRequests()
+                .antMatchers("/", "/api/**", "/css/**", "/images/**", "/js/**")
+                .permitAll()
+                .antMatchers("/v2/api-docs", "/swagger-resources/**",
+                        "/swagger-ui.html", "/webjars/**", "/swagger*/**")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
-            .formLogin()
-                .and()
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
-            .httpBasic();
+                .cors();
       }
       
      
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/v2/api-docs",
-                                   "/configuration/ui",
-                                   "/swagger-resources/**",
-                                   "/configuration/security",
-                                   "/swagger-ui.html",
-                                   "/webjars/**");
-    }
+//    @Override
+//    public void configure(WebSecurity web) throws Exception {
+//        web.ignoring().antMatchers("/v2/api-docs",
+//                                   "/configuration/ui",
+//                                   "/swagger-resources/**",
+//                                   "/configuration/security",
+//                                   "/swagger-ui.html",
+//                                   "/webjars/**");
+//    }
 }
 
 
