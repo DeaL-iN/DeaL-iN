@@ -22,6 +22,7 @@ import springfox.documentation.annotations.ApiIgnore;
 import java.io.IOException;
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/items")
 @RequiredArgsConstructor
